@@ -1,0 +1,4 @@
+(executable
+ (public_name day1_1)
+ (name solution01)
+ (libraries advent_of_ocaml_2024))

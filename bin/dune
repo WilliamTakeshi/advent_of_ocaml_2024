@@ -1,0 +1,4 @@
+(executable
+ (public_name advent_of_ocaml_2024)
+ (name main)
+ (libraries advent_of_ocaml_2024))
