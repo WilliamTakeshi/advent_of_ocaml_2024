@@ -32,3 +32,5 @@ _opam/
 .history
 
 node_modules
+
+bin/day01/input.txt
