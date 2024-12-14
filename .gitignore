@@ -33,4 +33,4 @@ _opam/
 
 node_modules
 
-bin/day01/input.txt
+bin/*/input.txt
