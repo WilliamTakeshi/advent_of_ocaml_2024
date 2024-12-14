@@ -1,15 +1,3 @@
-let read_file filename =
-  let ic = open_in filename in
-  let rec read_lines acc =
-    try
-      let line = input_line ic in
-      read_lines (line :: acc)
-    with End_of_file ->
-      close_in ic;
-      List.rev acc
-  in
-  read_lines []
-
 let parse_line line =
   match
     String.split_on_char ' ' line
@@ -41,7 +29,7 @@ let similarity_score left right =
 
 let () =
   let filename = "./bin/day01/test.txt" in
-  let lines = read_file filename in
+  let lines = Advent_of_ocaml_2024.Utils.read_file filename in
   let pairs = List.map parse_line lines in
   let left, right = split_pairs pairs in
   let score = similarity_score left right in

@@ -1,15 +1,3 @@
-let read_file filename =
-  let ic = open_in filename in
-  let rec read_lines acc =
-    try
-      let line = input_line ic in
-      read_lines (line :: acc)
-    with End_of_file ->
-      close_in ic;
-      List.rev acc
-  in
-  read_lines []
-
 let parse_line line = line |> String.split_on_char ' ' |> List.map int_of_string
 
 let rec differences lst =
@@ -24,7 +12,7 @@ let is_safe line =
 
 let () =
   let filename = "./bin/day02/test.txt" in
-  let lines = read_file filename in
+  let lines = Advent_of_ocaml_2024.Utils.read_file filename in
   let res =
     List.map parse_line lines |> List.map is_safe
     |> List.filter (fun x -> x)
